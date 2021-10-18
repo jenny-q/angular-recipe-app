@@ -1,25 +1,24 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <div class="navbar-header">
+        <div class="navbar-brand">
             <button type="button" class="navbar-toggle" (click)="collapsed = !collapsed">
                 <span class="icon-bar" *ngFor="let iconBar of [1, 2, 3]"></span>
             </button>
-            <a href="" class="navbar-brand">recipe book</a>
+            <a href="#" class="navbar-brand">recipe book</a>
         </div>
-        <div class="navbar-collapse" [class.collapse]="collapsed" (window:resize)="collapsed = true">
-            <ul class="nav navbar-nav">
-                <li><a href="">recipes</a></li>
-                <li><a href="">shopping list</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                    <button class="dropdown-toggle">Manage <span class="caret"></span></button>
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="navbar-nav">
+                <li class="nav-item"><button (click)="onSelect('recipe')" type="button" class="btn btn-light">recipes</button></li>
+                <li class="nav-item"><button (click)="onSelect('shopping-list')" type="button" class="btn btn-light">shopping list</button></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Manage <span class="caret"></span>
+                    </a>
                     <ul class="dropdown-menu">
-                        <li><button>save data</button></li>
-                        <li><button>fetch data</button></li>
+                        <li><button type="button" class="btn btn-link">save data</button></li>
+                        <li><button type="button" class="btn btn-link">fetch data</button></li>
                     </ul>
                 </li>
-
             </ul>
         </div>
     </div>
